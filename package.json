@@ -1,0 +1,32 @@
+{
+  "name": "csp-endpoint",
+  "version": "0.0.0",
+  "description": "Endpoint for CSP violation reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c0nrad/csp-endpoint"
+  },
+  "keywords": [
+    "CSP",
+    "content-security-poicy",
+    "report",
+    "violation"
+  ],
+  "author": "c0nrad <c0nrad@c0nrad.io> (http://c0nrad@c0nrad.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c0nrad/csp-endpoint/issues"
+  },
+  "homepage": "https://github.com/c0nrad/csp-endpoint",
+  "dependencies": {
+    "express": "^4.9.4",
+    "nomnom": "^1.8.0"
+  },
+  "bin": {
+    "endpoint": "bin/csp-endpoint.js"
+  }
+}
