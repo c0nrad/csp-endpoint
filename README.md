@@ -4,27 +4,24 @@ Endpoint for collecting CSP violation reports.
 
 ## Usage
 
-```
-$ csp-endpoint
-[+] CSP-endppoint listening on port 7777
-{ ts: new Date(), report-data: { document-uri: "", ..... }}
-{ ts...}
+```json
+$ csp-endpoint --port 3000 --path '/'
+{"csp-report":{"document-uri":"https://catfactspammer.com/","referrer":"",...}
+{"csp-report":{"document-uri":"https://catfactspammer.com/","referrer":"",...}
+{"csp-report":{"document-uri":"https://catfactspammer.com/","referrer":"",...}
 ```
 
+Usage:
 ```
-$ csp-endpoint --help
-
-Usage: csp-endpoint [options] [transports?]
+Usage: node csp-endpoint.js [options]
 
 Options:
-  -t, --time    include timestamp
-  -h, --headers include client headers
-  -i, --ip      include client ip address
-
-Transports:
-  --file <file> write report to file
-  --console     print report to console
-  --mongodb     store entry into mongodb
+   -t, --time      Include time in the reports  [true]
+   -h, --headers   Include client headers in the reports  [true]
+   -i, --ip        include client ip address in the reports  [true]
+   -c, --console   Print reports to the console  [true]
+   --path          The path of the endpoint to collect reports on  [/]
+   --port          The port of the endpoint to collect reports on  [3000]
 
 Documentation can be found at Https://github.com/c0nrad/csp-endpoint
 ```
@@ -37,6 +34,20 @@ npm install -g csp-endpoint
 
 ## Express middleware
 
+Express doesn't parse applicaiton/csp-report, so to help express use this middleware:
+```javascript
+var csp = require('csp-endpoint');
+var express = require('express');
+var app = express();
+app.use(csp.parser);
+...
+```
+
+## Future
+
+- mongodb support
+- classification
+- sanitization
 
 ## Contact
 Stuart Larsen c0nrad.io <c0nrad@c0nrad.io>

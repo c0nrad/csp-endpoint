@@ -27,6 +27,6 @@
     "nomnom": "^1.8.0"
   },
   "bin": {
-    "endpoint": "bin/csp-endpoint.js"
+    "csp-endpoint": "bin/csp-endpoint.js"
   }
 }
