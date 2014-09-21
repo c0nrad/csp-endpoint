@@ -4,7 +4,7 @@ Endpoint for collecting CSP violation reports.
 
 ## Usage
 
-```json
+```
 $ csp-endpoint --port 3000 --path '/'
 {"csp-report":{"document-uri":"https://catfactspammer.com/","referrer":"",...}
 {"csp-report":{"document-uri":"https://catfactspammer.com/","referrer":"",...}
