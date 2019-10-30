@@ -1,4 +1,6 @@
-# csp-endpoint
+# csp-endpoint (no longer maintained)
+
+## If you are interested in a fully managed CSP endpoint, https://csper.io will be coming out in the end of 2019. Stay tunned for updates!
 
 Endpoint for collecting CSP violation reports.
 
